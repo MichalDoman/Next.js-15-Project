@@ -5,13 +5,14 @@ export default async function Home({ searchParams }:{
   searchParams?: Promise<{ query?: string }>
 }) {
   const query = (await searchParams).query
+
   const posts = [{
     _createdAt: new Date(),
     views: 55,
     author: {_id: 1, name: 'Author Name'},
     _id: 1,
     description: "This is a description",
-    image: "",
+    image: null,
     category: "Robots",
     title: "We Robots"
 
