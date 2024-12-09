@@ -2,6 +2,9 @@ import {formatDate} from "@/lib/utils";
 import {EyeIcon} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import {Author, Startup} from "@/sanity/types";
+
+export type StartupCardType = Omit<Startup, "author"> & {author?: Author}
 
 const StartupCard = ( { post }: { post: StartupCardType }) => {
   const {_createdAt, views, author: {_id: authorId, name}, _id, description, title, category, image} = post;
@@ -47,7 +50,7 @@ const StartupCard = ( { post }: { post: StartupCardType }) => {
       <img src={image} alt="placeholder" className="startup-card_img" />
 
       <div className="flex-between gap-4 mt-5">
-        <Link href={`/?query=${category.toLowerCase()}`}>
+        <Link href={`/?query=${category?.toLowerCase()}`}>
           <p className="text-16-medium">
             {category}
           </p>
