@@ -3,7 +3,7 @@ import {UserIcon} from "@sanity/icons";
 
 export const author = defineType({
   name: "author",
-  title: "Author",
+  title: "Authors",
   type: "document",
   icon: UserIcon,
   fields: [
