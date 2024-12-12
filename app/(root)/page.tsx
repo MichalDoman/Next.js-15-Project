@@ -9,6 +9,7 @@ export default async function Home({ searchParams }:{
   const query = (await searchParams).query
 
   const posts = await client.fetch(STARTUPS_QUERY);
+  console.log(`POSTS: ${posts}`)
 
   return(
     <>
